@@ -47,10 +47,9 @@ div.clock .placeholder {
 	z-index: 50;
 }/*END CLOCK*/
 
-
-div.am-pm div p {
-	font-size: 12px;
-	font-weight: bold;
-	width: 100%;
+@media only screen and (max-width: 600px)  {
+	div.clock div p{
+		font-size: 75px;
+	}
 }
 
