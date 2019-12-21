@@ -1,5 +1,56 @@
-p {
-    text-align: center;
-    font-size: 60px;
-    margin-top: 0px;
-  }
+@font-face{
+    font-family:'digital-7';
+    src: url('./fonts/digital-7.ttf');
+   }
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: #ffffff;
+	background-color: #000000;
+	font-family: 'digital-7', sans-serif;
+}
+
+main {
+	text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 15px;
+    border: solid 5px #ffffff;
+}
+
+/* CLOCK */
+div.clock {
+	text-align: center;
+}
+
+div.clock div{
+	display: inline-block;
+	position: relative;
+}
+
+div.clock div p{
+	font-size: 100px;
+	position: relative;
+	z-index: 100;
+}
+
+div.clock .placeholder {
+	color: #131212;
+	position: absolute;
+	top: 0;
+	z-index: 50;
+}/*END CLOCK*/
+
+
+div.am-pm div p {
+	font-size: 12px;
+	font-weight: bold;
+	width: 100%;
+}
+
