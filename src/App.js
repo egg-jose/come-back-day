@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import React, { Component } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+export default class App extends Component {
+  state = {
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+    end: false
+  }
+  cTime() {
+    setInterval( () => {
+      var countDownDate = new Date("Jan 7, 2020 7:30:0").getTime();
+      var now = new Date().getTime();
+  
+      var distance = countDownDate - now;
+  
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      this.setState({
+        days:days,
+        hours:hours,
+        minutes:minutes,
+        seconds:seconds
+      })
+  
+      if (distance < 0) {
+        this.setState({
+          end:true
+        })
+      }
+    },1000)
+  }
+  render() {
+    this.cTime();
+    return (
+      <div>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {this.state.days +"d " + this.state.hours + "h "+ this.state.minutes + "m " + this.state.seconds + "s "}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      </div>
+    )
+  }
 }
-
-export default App;
