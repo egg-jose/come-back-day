@@ -71,34 +71,34 @@ export default class App extends Component {
       //   </div>
       // </div>
       <div className="clock">
-        Dias:
         <div className="numbers">
-          <p className="hours">{days}</p>
+          <p className="hours">{days}&nbsp;</p>
           <p className="placeholder">88</p>
         </div>
+        Dias
         <br />
         <br />
-        Horas:
         <div className="numbers">
-          <p className="hours">{hours.length >= 2 ? hours : '0' + hours}</p>
+          <p className="hours">{hours.length >= 2 ? hours : '0' + hours}&nbsp;</p>
           <p className="placeholder">88</p>
         </div>
+        Horas
         <br />
         <br />
 
-        Minutos:
         <div className="numbers">
-          <p className="minutes">{minutes.length >= 2 ? minutes : '0' + minutes}</p>
+          <p className="minutes">{minutes.length >= 2 ? minutes : '0' + minutes}&nbsp;</p>
           <p className="placeholder">88</p>
         </div>
+        Minutos
         <br />
         <br />
 
-        Segundos:
         <div className="numbers">
-          <p className="seconds">{seconds.length >= 2 ? seconds : '0' + seconds}</p>
+          <p className="seconds">{seconds.length >= 2 ? seconds : '0' + seconds}&nbsp;</p>
           <p className="placeholder">88</p>
         </div>
+        Segundos
       </div>
     )
   }
