@@ -27,6 +27,7 @@ main {
 /* CLOCK */
 div.clock {
 	text-align: center;
+	font-size: 100px;
 }
 
 div.clock div{
@@ -35,7 +36,7 @@ div.clock div{
 }
 
 div.clock div p{
-	font-size: 100px;
+
 	position: relative;
 	z-index: 100;
 }
@@ -48,8 +49,14 @@ div.clock .placeholder {
 }/*END CLOCK*/
 
 @media only screen and (max-width: 600px)  {
-	div.clock div p{
+	div.clock{
 		font-size: 75px;
 	}
 }
 
+
+@media only screen and (max-width: 450px)  {
+	div.clock{
+		font-size: 50px;
+	}
+}

@@ -36,42 +36,67 @@ export default class App extends Component {
   }
   render() {
     this.cTime();
-    const {days,hours,minutes,seconds} = this.state
+    const { days, hours, minutes, seconds } = this.state
     return (
-      // <div>
-      //   <p>
-      //     {this.state.days +"d " + this.state.hours + "h "+ this.state.minutes + "m " + this.state.seconds + "s "}
-      //   </p>
+      // <div className="clock">
+      //   <div className="numbers">
+      //     <p className="hours">{days}</p>
+      //     <p className="placeholder">88</p>
+      //   </div>
+
+      //   <div className="colon">
+      //     <p>:</p>
+      //   </div>
+      //   <div className="numbers">
+      //     <p className="hours">{hours.length >= 2 ? hours : '0'+ hours}</p>
+      //     <p className="placeholder">88</p>
+      //   </div>
+
+      //   <div className="colon">
+      //     <p>:</p>
+      //   </div>
+
+      //   <div className="numbers">
+      //     <p className="minutes">{minutes.length >= 2 ? minutes : '0'+ minutes}</p>
+      //     <p className="placeholder">88</p>
+      //   </div>
+
+      //   <div className="colon">
+      //     <p>:</p>
+      //   </div>
+
+      //   <div className="numbers">
+      //     <p className="seconds">{seconds.length >= 2 ? seconds : '0'+ seconds}</p>
+      //     <p className="placeholder">88</p>
+      //   </div>
       // </div>
       <div className="clock">
+        Dias:
         <div className="numbers">
           <p className="hours">{days}</p>
           <p className="placeholder">88</p>
         </div>
-
-        <div className="colon">
-          <p>:</p>
-        </div>
+        <br />
+        <br />
+        Horas:
         <div className="numbers">
-          <p className="hours">{hours.length >= 2 ? hours : '0'+ hours}</p>
+          <p className="hours">{hours.length >= 2 ? hours : '0' + hours}</p>
           <p className="placeholder">88</p>
         </div>
+        <br />
+        <br />
 
-        <div className="colon">
-          <p>:</p>
-        </div>
-
+        Minutos:
         <div className="numbers">
-          <p className="minutes">{minutes.length >= 2 ? minutes : '0'+ minutes}</p>
+          <p className="minutes">{minutes.length >= 2 ? minutes : '0' + minutes}</p>
           <p className="placeholder">88</p>
         </div>
+        <br />
+        <br />
 
-        <div className="colon">
-          <p>:</p>
-        </div>
-
+        Segundos:
         <div className="numbers">
-          <p className="seconds">{seconds.length >= 2 ? seconds : '0'+ seconds}</p>
+          <p className="seconds">{seconds.length >= 2 ? seconds : '0' + seconds}</p>
           <p className="placeholder">88</p>
         </div>
       </div>
