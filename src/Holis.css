@@ -1,0 +1,21 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: #ffffff;
+	background-color: #000000;
+    font-family: 'Roboto', sans-serif;
+    height:100%;
+}
+h1 {
+    font-size: 500%;
+    text-align: center;
+}
+
+.bottom {
+    position: fixed; 
+    width:100%;
+    bottom:0;
+}

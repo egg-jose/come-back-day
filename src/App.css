@@ -1,9 +1,9 @@
-@font-face{
+/*@font-face{
     font-family:'digital-7';
     src: url('./fonts/digital-7.ttf');
    }
 
-* {
+ * {
 	margin: 0;
 	padding: 0;
 }
@@ -24,7 +24,7 @@ main {
     border: solid 5px #ffffff;
 }
 
-/* CLOCK */
+
 div.clock {
 	text-align: center;
 	font-size: 100px;
@@ -46,7 +46,7 @@ div.clock .placeholder {
 	position: absolute;
 	top: 0;
 	z-index: 50;
-}/*END CLOCK*/
+}
 
 @media only screen and (max-width: 600px)  {
 	div.clock{
@@ -80,4 +80,4 @@ h1 {
 
 }
 
-
+ */
