@@ -11,7 +11,7 @@ export default class App extends Component {
     // end: false
   }
   componentDidMount() {
-    var countDownDate = new Date(2020, 3, 16, 18, 0, 0, 0);
+    var countDownDate = new Date(2020, 2, 16, 18, 0, 0, 0);
     var now = new Date();
     var distance = now - countDownDate;
     var days = Math.floor(distance / (1000 * 60 * 60 * 24)).toString();
