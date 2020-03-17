@@ -1,6 +1,6 @@
 import './App.css'
-import React, { Component } from 'react'
-import mario from './images/mario.jpg'
+import React, { Component, Fragment } from 'react'
+// import mario from './images/mario.jpg'
 
 export default class App extends Component {
   state = {
@@ -8,12 +8,12 @@ export default class App extends Component {
     hours: 0,
     minutes: 0,
     seconds: 0,
-    end: false
+    // end: false
   }
   componentDidMount() {
-    var countDownDate = new Date("Jan 7, 2020 7:30:0").getTime();
-    var now = new Date().getTime();
-    var distance = countDownDate - now;
+    var countDownDate = new Date(2020, 3, 16, 18, 0, 0, 0);
+    var now = new Date();
+    var distance = now - countDownDate;
     var days = Math.floor(distance / (1000 * 60 * 60 * 24)).toString();
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString();
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString();
@@ -24,18 +24,13 @@ export default class App extends Component {
       minutes: minutes,
       seconds: seconds
     })
-    if (distance < 0) {
-      this.setState({
-        end: true
-      })
-    }
   }
   cTime() {
     setInterval(() => {
-      var countDownDate = new Date("Jan 7, 2020 7:30:0").getTime();
-      var now = new Date().getTime();
+      var countDownDate = new Date(2020, 2, 16, 18, 0, 0, 0);
+      var now = new Date();
 
-      var distance = countDownDate - now;
+      var distance = now - countDownDate;
 
       var days = Math.floor(distance / (1000 * 60 * 60 * 24)).toString();
       var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString();
@@ -47,63 +42,31 @@ export default class App extends Component {
         minutes: minutes,
         seconds: seconds
       })
-
-      if (distance < 0) {
-        this.setState({
-          end: true
-        })
-      }
     }, 1000)
   }
   render() {
 
-    const { days, hours, minutes, seconds, end } = this.state
+    const { days, hours, minutes, seconds } = this.state
+    this.cTime()
+    return (
+      <React.Fragment>
 
-    if (!end) {
-      this.cTime();
-      return (
+        <p className="title">Tiempo de cuarentena de cic</p>
         <div className="clock">
           <div className="numbers">
-            <p className="hours">{days}&nbsp;</p>
-            <p className="placeholder">88</p>
+            <p className="days counter">{days}&nbsp;</p>
+            <p className="hours counter">{hours.length >= 2 ? hours : '0' + hours}&nbsp;</p>
+            <p className="minutes counter">{minutes.length >= 2 ? minutes : '0' + minutes}&nbsp;</p>
+            <p className="seconds counter">{seconds.length >= 2 ? seconds : '0' + seconds}&nbsp;</p>
           </div>
-          Dias
-        <br />
-          <br />
-          <div className="numbers">
-            <p className="hours">{hours.length >= 2 ? hours : '0' + hours}&nbsp;</p>
-            <p className="placeholder">88</p>
+          <div className="content">
+            <p className="text">Dias</p>
+            <p className="text">Horas</p>
+            <p className="text">Minutos</p>
+            <p className="text">Segundos</p>
           </div>
-          Horas
-        <br />
-          <br />
-
-          <div className="numbers">
-            <p className="minutes">{minutes.length >= 2 ? minutes : '0' + minutes}&nbsp;</p>
-            <p className="placeholder">88</p>
-          </div>
-          Minutos
-        <br />
-          <br />
-
-          <div className="numbers">
-            <p className="seconds">{seconds.length >= 2 ? seconds : '0' + seconds}&nbsp;</p>
-            <p className="placeholder">88</p>
-          </div>
-          Segundos
-      </div>
-      )
-    }
-    else {
-      return (
-        <React.Fragment>
-          <img src={mario} alt={"mario"} />
-          <div className="container">
-            <h1>HERE WE GOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOoOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO</h1>
-          </div>
-        </React.Fragment>
-
-      );
-    }
+        </div>
+      </React.Fragment>
+    )
   }
 }
